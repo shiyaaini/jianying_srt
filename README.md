@@ -51,18 +51,17 @@
 4. **路径管理**：支持自定义工程目录路径，记住用户设置
 5. **快速访问**：双击选择工程，支持打开工程所在目录
 
-## 安装要求
+## 使用说明
 
-```bash
-pip install PyQt5
-```
+- 使用已打包版本，无需安装依赖
+- 应用及工程文件的存放路径不可包含中文字符
+- 运行程序后，可在“其他功能”中使用“字幕修正、外部音频匹配、批量导出”等模块
 
 ## 使用方法
 
 ### 1. 启动程序
-```bash
-python subtitle_aligner.py
-```
+- 双击已打包应用程序启动
+- 若需命令行启动，执行打包目录中的可执行文件
 
 ### 2. 选择工程文件
 
@@ -76,7 +75,7 @@ python subtitle_aligner.py
 - 点击"手动加载"按钮
 - 手动选择 `draft_content.json` 文件
 - 工程文件通常位于：`C:\Users\{用户名}\AppData\Local\JianyingPro\User Data\Projects\com.lveditor.draft\{工程名称}\draft_content.json`
-pip install --index-url https://download.pytorch.org/whl/cu121 torch torchvision torchaudio
+
 
 ### 3. 配置对齐参数
 - **对齐方法**：选择合适的对齐策略
@@ -175,8 +174,19 @@ pip install --index-url https://download.pytorch.org/whl/cu121 torch torchvision
 - **数据处理**：JSON解析和操作
 - **多线程**：使用QThread避免界面卡顿
 
-## 更新历史
+## 原理概述
 
+- 草稿解析与容错：加载剪映/CapCut草稿 draft_content.json，支持 UTF-8/UTF-8-SIG/GB18030 与解密；规范化 materials、tracks、segments 结构
+- 时长与时间轴：使用微秒单位，按音频时长或比例对齐；支持一对一配对与重叠处理策略（后移、微调、压缩、忽略）
+- 字幕修正（AI）：将选中的文本片段构建为 SRT，按请求长度分块非流式发送，返回后解析为SRT；提示词支持勾选项与手动编辑联动；预览用左右双文本框对比并一键应用到草稿（保存前自动备份）
+- 外部音频匹配：按音频文件名与字幕文本相似度进行匹配（可忽略标点、阈值可调），可复制到 textReading 并写入 materials.audios 与片段；更新工程时长，兼容旧/新草稿
+- 批量导出与工具集：在“其他功能”里提供批量导出与根据音频驱动的视频变速等工具
+- 日志与进度：日志增量追加不打断滚动；基于字数估算倒计时（默认 5000 字≈1分钟，每 10 秒更新），状态栏同步显示剩余时间
+
+
+## 更新历史
+- **v1.0.2**：添加了字幕修正（AI）功能，优化了性能
+- **v1.0.1**：修复了一些 bug，优化了性能
 - **v1.0.0**：初始版本，支持基本的字幕时长对齐功能
 
 ## 许可证
