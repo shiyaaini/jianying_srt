@@ -1,8 +1,0 @@
-{
-  "id": "subtitle_exporter",
-  "name": "字幕导出工具",
-  "version": "1.0.0",
-  "description": "从剪映草稿中批量提取并导出 SRT 和 ASS 格式字幕",
-  "author": "supertools2023",
-  "entry": "main.py"
-}

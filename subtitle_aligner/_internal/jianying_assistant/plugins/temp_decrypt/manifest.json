@@ -1,8 +1,0 @@
-{
-  "id": "temp_decrypt",
-  "name": "临时解密工具",
-  "version": "1.0.0",
-  "description": "自动解密 draft_content.json",
-  "author": "Auto-generated",
-  "entry": "main.py"
-}
