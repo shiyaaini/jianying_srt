@@ -1,0 +1,8 @@
+{
+  "id": "update_blocker",
+  "name": "剪映更新拦截器",
+  "version": "1.0.1",
+  "description": "通过创建系统级互斥量和文件锁，阻止剪映后台下载更新及强制升级。",
+  "author": "supertools2023",
+  "entry": "main.py"
+}
