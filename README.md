@@ -1,3 +1,11 @@
+**试用一个月｜欢迎联系**
+
+- QQ：2106359814
+- 微信：Dengboliaini
+- 闲鱼： https://m.tb.cn/h.7HKRtPF?tk=rF1nUQ5Buba
+
+---
+
 # 剪映字幕对齐工具
 
 这是一个用于调整剪映工程文件中字幕时长的PyQt5应用程序，可以解决文本转语音后音频时长与字幕显示时长不匹配的问题。
@@ -192,3 +200,19 @@
 ## 许可证
 
 本项目仅供学习和个人使用，请遵守相关法律法规。
+
+## 界面预览
+
+- 界面展示图片位于项目 static 目录。
+
+![主界面](static/one.png)
+![功能预览二](static/two.png)
+![功能预览三](static/three.png)
+![功能预览四](static/four.png)
+![功能预览五](static/five.png)
+
+## 联系方式
+
+- QQ：2106359814
+- 微信：Dengboliaini
+- 闲鱼： https://m.tb.cn/h.7HKRtPF?tk=rF1nUQ5Buba
